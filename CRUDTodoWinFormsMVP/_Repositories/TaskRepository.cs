@@ -23,10 +23,10 @@ namespace CRUDTodoWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into Task values (@title, @description @isCompleted)";
+                command.CommandText = "insert into Task values (@title, @description @status)";
                 command.Parameters.Add("@title", SqlDbType.NVarChar).Value = taskModel.Title;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = taskModel.Description;
-                command.Parameters.Add("@isCompleted", SqlDbType.NVarChar).Value = taskModel.IsCompleted;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = taskModel.StatusTask;
                 command.ExecuteNonQuery();
             }
         }
@@ -37,10 +37,10 @@ namespace CRUDTodoWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Task set Task_Name=@title, Task_Description=@description, Task_Status=@isCompleted where Task_Id=@id";
+                command.CommandText = @"update Task set Task_Name=@title, Task_Description=@description, Task_Status=@status where Task_Id=@id";
                 command.Parameters.Add("@title", SqlDbType.NVarChar).Value = taskModel.Title;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = taskModel.Description;
-                command.Parameters.Add("@isCompleted", SqlDbType.NVarChar).Value = taskModel.IsCompleted;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = taskModel.StatusTask;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = taskModel.Id;
                 command.ExecuteNonQuery();
             }
@@ -75,7 +75,7 @@ namespace CRUDTodoWinFormsMVP._Repositories
                         taskModel.Id = (int)reader[0];
                         taskModel.Title = reader[1].ToString();
                         taskModel.Description = reader[2].ToString();
-                        taskModel.IsCompleted = reader[3].ToString();
+                        taskModel.StatusTask = reader[3].ToString();
                         taskList.Add(taskModel);
                     }
                 }

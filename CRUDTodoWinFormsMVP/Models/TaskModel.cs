@@ -14,10 +14,10 @@ namespace CRUDTodoWinFormsMVP.Models
         private int id;
         private string title;
         private string description;
-        private bool isCompleted;
+        private string statusTask;
 
         //Properties-Validations
-        [DisplayName("Tasj ID")]
+        [DisplayName("Task ID")]
         public int Id { get => id; set => id = value; }
 
         [DisplayName("Title")]
@@ -29,7 +29,6 @@ namespace CRUDTodoWinFormsMVP.Models
         [Required(ErrorMessage = "Task description is required")]
         [StringLength(40, MinimumLength = 10, ErrorMessage = "Task description must be between 10 and 40 characters")]
         public string Description { get => description; set => description = value; }
-
-        public bool IsCompleted { get => isCompleted; set => isCompleted = value; }
+        public string StatusTask { get => statusTask; set => statusTask = value; }
     }
 }

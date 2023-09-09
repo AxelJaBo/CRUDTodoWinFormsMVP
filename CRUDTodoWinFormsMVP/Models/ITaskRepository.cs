@@ -10,7 +10,7 @@ namespace CRUDTodoWinFormsMVP.Models
     {
         void AddTask(TaskModel taskModel);
         void EditTask(TaskModel taskModel);
-        void DeleteTask(TaskModel taskModel);
+        void DeleteTask(int id);
         IEnumerable<TaskModel> GetAllTasks();
     }
 }
