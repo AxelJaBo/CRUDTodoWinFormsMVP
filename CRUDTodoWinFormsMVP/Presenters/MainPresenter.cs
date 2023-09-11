@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CRUDTodoWinFormsMVP.Views;
+﻿using CRUDTodoWinFormsMVP._Repositories;
 using CRUDTodoWinFormsMVP.Models;
-using CRUDTodoWinFormsMVP._Repositories;
+using CRUDTodoWinFormsMVP.Views;
 
 namespace CRUDTodoWinFormsMVP.Presenters
 {
@@ -23,7 +18,7 @@ namespace CRUDTodoWinFormsMVP.Presenters
 
         private void ShowTasksView(object? sender, EventArgs e)
         {
-            ITaskView view = TaskView.GetInstance((MainView);
+            ITaskView view = TaskView.GetInstance((MainView)mainView);
             ITaskRepository repository = new TaskRepository(sqlConnectionString);
             new TaskPresenter(view, repository);
         }

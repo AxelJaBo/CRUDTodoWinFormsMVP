@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
 using CRUDTodoWinFormsMVP.Models;
 
 namespace CRUDTodoWinFormsMVP._Repositories
@@ -23,7 +18,7 @@ namespace CRUDTodoWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into Task values (@title, @description @status)";
+                command.CommandText = "insert into Task values (@title, @description, @status)";
                 command.Parameters.Add("@title", SqlDbType.NVarChar).Value = taskModel.Title;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = taskModel.Description;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = taskModel.StatusTask;
@@ -37,7 +32,7 @@ namespace CRUDTodoWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Task set Task_Name=@title, Task_Description=@description, Task_Status=@status where Task_Id=@id";
+                command.CommandText = @"update Task set Task_Title=@title, Task_Description=@description, Task_Status=@status where Task_Id=@id";
                 command.Parameters.Add("@title", SqlDbType.NVarChar).Value = taskModel.Title;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = taskModel.Description;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = taskModel.StatusTask;

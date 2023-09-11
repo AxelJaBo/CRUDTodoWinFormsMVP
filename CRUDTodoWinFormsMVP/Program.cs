@@ -1,8 +1,6 @@
-using CRUDTodoWinFormsMVP.Models;
-using CRUDTodoWinFormsMVP.Presenters;
-using CRUDTodoWinFormsMVP._Repositories;
-using CRUDTodoWinFormsMVP.Views;
 using System.Configuration;
+using CRUDTodoWinFormsMVP.Presenters;
+using CRUDTodoWinFormsMVP.Views;
 
 namespace CRUDTodoWinFormsMVP
 {

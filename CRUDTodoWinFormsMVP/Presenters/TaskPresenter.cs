@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CRUDTodoWinFormsMVP.Models;
+﻿using CRUDTodoWinFormsMVP.Models;
 using CRUDTodoWinFormsMVP.Views;
 
 namespace CRUDTodoWinFormsMVP.Presenters

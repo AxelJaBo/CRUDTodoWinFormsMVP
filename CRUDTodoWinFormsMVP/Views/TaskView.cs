@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CRUDTodoWinFormsMVP.Views
+﻿namespace CRUDTodoWinFormsMVP.Views
 {
     public partial class TaskView : Form, ITaskView
     {
@@ -16,15 +6,13 @@ namespace CRUDTodoWinFormsMVP.Views
         private string message;
         private bool isSuccessful;
         private bool isEdit;
-        private readonly string sqlConnectionString;
 
         //Constructor
-        public TaskView(string sqlConnectionString)
+        public TaskView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabPageTaskDetail);
-            this.sqlConnectionString = sqlConnectionString;
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -73,7 +61,7 @@ namespace CRUDTodoWinFormsMVP.Views
             //Delete
             btnDelete.Click += delegate
             {
-                var result = MessageBox.Show("Are you sure you want to delete the selected task?", "Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var result = MessageBox.Show("Are you sure you want to delete the selected pet?", "Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
@@ -82,6 +70,7 @@ namespace CRUDTodoWinFormsMVP.Views
             };
         }
 
+        //Properties
         public string TaskId { get => txtTaskId.Text; set => txtTaskId.Text = value; }
         public string TaskTitle { get => txtTaskTitle.Text; set => txtTaskTitle.Text = value; }
         public string TaskDescription { get => txtTaskDescription.Text; set => txtTaskDescription.Text = value; }
@@ -91,6 +80,7 @@ namespace CRUDTodoWinFormsMVP.Views
         public bool IsSuccessfull { get => isSuccessful; set => isSuccessful = value; }
         public string Message { get => message; set => message = value; }
 
+        //Events
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
@@ -99,19 +89,19 @@ namespace CRUDTodoWinFormsMVP.Views
         public event EventHandler CancelEvent;
 
         //Methods
-        public void SetTaskListBindingSource(BindingSource taskList)
+        public void SetTaskListBindingSource(BindingSource petList)
         {
-            dataGridView1.DataSource = taskList;
+            dataGridView1.DataSource = petList;
         }
 
         //Singleton pattern (Open a single form instance)
         private static TaskView instance;
-        public static View GetInstance(Form parentContainer)
+        public static TaskView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new TaskView();
-                instance.MdiParent = parentContainer;
+                //instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
             }
