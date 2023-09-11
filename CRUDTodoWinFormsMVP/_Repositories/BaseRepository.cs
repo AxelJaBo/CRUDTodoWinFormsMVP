@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CRUDTodoWinFormsMVP._Repositories
 {
-    public class BaseRepository
+    public abstract class BaseRepository
     {
         protected string connectionString;
+        //..
     }
 }
+

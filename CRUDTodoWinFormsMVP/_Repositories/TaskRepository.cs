@@ -82,5 +82,36 @@ namespace CRUDTodoWinFormsMVP._Repositories
             }
             return taskList;
         }
+
+        public IEnumerable<TaskModel> GetByValue(string value)
+        {
+            var taskList = new List<TaskModel>();
+            int taskId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string taskTitle = value;
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"Select * from Task
+                                        where Task_Id=@id or Task_Title like @name+'%'
+                                        order by Task_Id desc";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = taskId;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = taskTitle;
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var taskModel = new TaskModel();
+                        taskModel.Id = (int)reader[0];
+                        taskModel.Title = reader[1].ToString();
+                        taskModel.Description = reader[2].ToString();
+                        taskModel.StatusTask = reader[3].ToString();
+                        taskList.Add(taskModel);
+                    }
+                }
+            }
+            return taskList;
+        }
     }
 }
