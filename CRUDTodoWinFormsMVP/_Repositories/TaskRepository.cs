@@ -90,10 +90,10 @@ namespace CRUDTodoWinFormsMVP._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"Select * from Task
-                                        where Task_Id=@id or Task_Title like @name+'%'
+                                        where Task_Id=@id or Task_Title like @title+'%'
                                         order by Task_Id desc";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = taskId;
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = taskTitle;
+                command.Parameters.Add("@title", SqlDbType.NVarChar).Value = taskTitle;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())

@@ -89,29 +89,29 @@
         public event EventHandler CancelEvent;
 
         //Methods
-        public void SetTaskListBindingSource(BindingSource petList)
+        public void SetTaskListBindingSource(BindingSource taskList)
         {
-            dataGridView1.DataSource = petList;
+            dataGridView1.DataSource = taskList;
         }
 
-        //Singleton pattern (Open a single form instance)
-        private static TaskView instance;
-        public static TaskView GetInstance(Form parentContainer)
-        {
-            if (instance == null || instance.IsDisposed)
-            {
-                instance = new TaskView();
-                //instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
-            }
-            else
-            {
-                if (instance.WindowState == FormWindowState.Minimized)
-                    instance.WindowState = FormWindowState.Normal;
-                instance.BringToFront();
-            }
-            return instance;
-        }
+        ////Singleton pattern (Open a single form instance)
+        //private static TaskView instance;
+        //public static TaskView GetInstance(Form parentContainer)
+        //{
+        //    if (instance == null || instance.IsDisposed)
+        //    {
+        //        instance = new TaskView();
+        //        //instance.MdiParent = parentContainer;
+        //        instance.FormBorderStyle = FormBorderStyle.None;
+        //        instance.Dock = DockStyle.Fill;
+        //    }
+        //    else
+        //    {
+        //        if (instance.WindowState == FormWindowState.Minimized)
+        //            instance.WindowState = FormWindowState.Normal;
+        //        instance.BringToFront();
+        //    }
+        //    return instance;
+        //}
     }
 }
