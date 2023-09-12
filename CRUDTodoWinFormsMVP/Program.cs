@@ -18,7 +18,6 @@ namespace CRUDTodoWinFormsMVP
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
-            //IMainView view = new MainView();
             ITaskView view = new TaskView();
             ITaskRepository repository = new TaskRepository(sqlConnectionString);
             new TaskPresenter(view, repository);

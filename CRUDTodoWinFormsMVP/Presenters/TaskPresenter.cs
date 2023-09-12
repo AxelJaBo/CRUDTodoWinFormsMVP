@@ -23,9 +23,9 @@ namespace CRUDTodoWinFormsMVP.Presenters
             this.view.DeleteEvent += DeleteSelectedTask;
             this.view.SaveEvent += SaveTask;
             this.view.CancelEvent += CancelAction;
-            //Set pets binding source
+            //Set taks binding source
             this.view.SetTaskListBindingSource(tasksBindingSource);
-            //Load pet list view
+            //Load task list view
             LoadAllTaskList();
             //Show view
             this.view.Show();

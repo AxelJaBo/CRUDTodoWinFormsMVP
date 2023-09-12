@@ -38,6 +38,7 @@ namespace CRUDTodoWinFormsMVP._Repositories
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = taskModel.StatusTask;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = taskModel.Id;
                 command.ExecuteNonQuery();
+                
             }
         }
         public void DeleteTask(int id)
