@@ -1,4 +1,6 @@
 using System.Configuration;
+using CRUDTodoWinFormsMVP._Repositories;
+using CRUDTodoWinFormsMVP.Models;
 using CRUDTodoWinFormsMVP.Presenters;
 using CRUDTodoWinFormsMVP.Views;
 
@@ -16,8 +18,10 @@ namespace CRUDTodoWinFormsMVP
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
-            IMainView view = new MainView();
-            new MainPresenter(view, sqlConnectionString);
+            //IMainView view = new MainView();
+            ITaskView view = new TaskView();
+            ITaskRepository repository = new TaskRepository(sqlConnectionString);
+            new TaskPresenter(view, repository);
             Application.Run((Form)view);
         }
     }

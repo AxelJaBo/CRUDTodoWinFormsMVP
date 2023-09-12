@@ -63,7 +63,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(462, 100);
+            panel1.Size = new Size(549, 100);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -91,7 +91,7 @@
             txtSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtSearch.Location = new Point(88, 6);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(182, 25);
+            txtSearch.Size = new Size(282, 25);
             txtSearch.TabIndex = 2;
             // 
             // tabControl1
@@ -102,7 +102,7 @@
             tabControl1.Location = new Point(0, 100);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(462, 350);
+            tabControl1.Size = new Size(549, 350);
             tabControl1.TabIndex = 1;
             // 
             // tabPageTaskList
@@ -117,7 +117,7 @@
             tabPageTaskList.Location = new Point(4, 24);
             tabPageTaskList.Name = "tabPageTaskList";
             tabPageTaskList.Padding = new Padding(3);
-            tabPageTaskList.Size = new Size(454, 322);
+            tabPageTaskList.Size = new Size(541, 322);
             tabPageTaskList.TabIndex = 0;
             tabPageTaskList.Text = "Task List";
             tabPageTaskList.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(357, 75);
+            btnDelete.Location = new Point(457, 71);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 28);
             btnDelete.TabIndex = 7;
@@ -135,7 +135,7 @@
             // btnEdit
             // 
             btnEdit.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEdit.Location = new Point(357, 41);
+            btnEdit.Location = new Point(457, 37);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(75, 28);
             btnEdit.TabIndex = 6;
@@ -145,7 +145,7 @@
             // btnAddNew
             // 
             btnAddNew.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddNew.Location = new Point(357, 7);
+            btnAddNew.Location = new Point(457, 3);
             btnAddNew.Name = "btnAddNew";
             btnAddNew.Size = new Size(75, 28);
             btnAddNew.TabIndex = 5;
@@ -155,7 +155,7 @@
             // btnSearch
             // 
             btnSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSearch.Location = new Point(276, 7);
+            btnSearch.Location = new Point(376, 3);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 28);
             btnSearch.TabIndex = 4;
@@ -167,7 +167,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(8, 37);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(343, 277);
+            dataGridView1.Size = new Size(443, 277);
             dataGridView1.TabIndex = 3;
             // 
             // tabPageTaskDetail
@@ -185,7 +185,7 @@
             tabPageTaskDetail.Location = new Point(4, 24);
             tabPageTaskDetail.Name = "tabPageTaskDetail";
             tabPageTaskDetail.Padding = new Padding(3);
-            tabPageTaskDetail.Size = new Size(454, 322);
+            tabPageTaskDetail.Size = new Size(541, 322);
             tabPageTaskDetail.TabIndex = 1;
             tabPageTaskDetail.Text = "Task Detail";
             tabPageTaskDetail.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             // btnCancel
             // 
             btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.Location = new Point(282, 221);
+            btnCancel.Location = new Point(352, 242);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 29);
             btnCancel.TabIndex = 10;
@@ -203,7 +203,7 @@
             // btnSave
             // 
             btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.Location = new Point(201, 221);
+            btnSave.Location = new Point(271, 242);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 29);
             btnSave.TabIndex = 9;
@@ -214,14 +214,15 @@
             // 
             cbStatus.AutoCompleteCustomSource.AddRange(new string[] { "earrings", "in progress", "completed" });
             cbStatus.FormattingEnabled = true;
-            cbStatus.Location = new Point(138, 181);
+            cbStatus.Items.AddRange(new object[] { "Pendiente", "En Proceso", "Finalizada" });
+            cbStatus.Location = new Point(208, 202);
             cbStatus.Name = "cbStatus";
             cbStatus.Size = new Size(219, 23);
             cbStatus.TabIndex = 8;
             // 
             // txtTaskDescription
             // 
-            txtTaskDescription.Location = new Point(138, 60);
+            txtTaskDescription.Location = new Point(208, 81);
             txtTaskDescription.Multiline = true;
             txtTaskDescription.Name = "txtTaskDescription";
             txtTaskDescription.Size = new Size(219, 115);
@@ -229,14 +230,14 @@
             // 
             // txtTaskTitle
             // 
-            txtTaskTitle.Location = new Point(138, 31);
+            txtTaskTitle.Location = new Point(208, 52);
             txtTaskTitle.Name = "txtTaskTitle";
             txtTaskTitle.Size = new Size(219, 23);
             txtTaskTitle.TabIndex = 5;
             // 
             // txtTaskId
             // 
-            txtTaskId.Location = new Point(138, 2);
+            txtTaskId.Location = new Point(208, 23);
             txtTaskId.Name = "txtTaskId";
             txtTaskId.Size = new Size(219, 23);
             txtTaskId.TabIndex = 4;
@@ -245,7 +246,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(15, 176);
+            label6.Location = new Point(85, 197);
             label6.Name = "label6";
             label6.Size = new Size(69, 28);
             label6.TabIndex = 3;
@@ -255,7 +256,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(8, 59);
+            label5.Location = new Point(78, 80);
             label5.Name = "label5";
             label5.Size = new Size(116, 28);
             label5.TabIndex = 2;
@@ -265,7 +266,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(8, 31);
+            label4.Location = new Point(78, 52);
             label4.Name = "label4";
             label4.Size = new Size(53, 28);
             label4.TabIndex = 1;
@@ -275,7 +276,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(8, 3);
+            label3.Location = new Point(78, 24);
             label3.Name = "label3";
             label3.Size = new Size(76, 28);
             label3.TabIndex = 0;
@@ -285,7 +286,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(462, 450);
+            ClientSize = new Size(549, 450);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "TaskView";
